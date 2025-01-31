@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"time"
 	"webservice/api"
 
@@ -20,5 +21,9 @@ func main () {
 	}
 	router.Use(cors.New(c))
 	router.GET("/", api.Index)
-	router.Run(":8080")
+	port:= os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	router.Run(":" +port)
 }
