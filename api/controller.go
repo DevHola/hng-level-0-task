@@ -16,7 +16,7 @@ func Index(c *gin.Context) {
 	response := Response{
 		Email: "connectola@yahoo.com",
 		Current_datetime: time.Now().UTC().Format(time.RFC3339),
-		Github_url: "github.com/devhola/hng-level-0-task",
+		Github_url: "https://github.com/DevHola/hng-level-0-task.git",
 	}
 
 	c.JSON(200, response)
